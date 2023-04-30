@@ -1,0 +1,9 @@
+<form action="/cart" method="post">
+                <button type="submit" class=<"btn">Add to cart</button>
+                <input type="hidden" value="<%=product.id%>" name="productId">
+            </form>
+
+
+<!-- the add to mumu button is included in the product-detail  -->
+    
+  <!-- when the button for /cart post request is clicked, it checks the clicked element and finds the id which it stores as productId:product.id,uses it to run execute the findById and gets the particular product, uses this product to run the cart.addProduct function. -->

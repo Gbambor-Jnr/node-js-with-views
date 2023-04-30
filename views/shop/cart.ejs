@@ -1,0 +1,27 @@
+<%- include('../includes/head.ejs') %>
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+<main>
+<% if (products.length>0){ %> 
+       <ul>
+        <% products.forEach(p=>{%>
+            <li><%=p.title%></li>
+            <h2>Quantity:<%=p.cartItem.quantity%></h2>
+                <!-- //the quantity initially is not part of the products here but a part of the related item gotten by the THROUGH relationship -->
+            <form action="/cart-delete-item" method="post">
+                        <input type="hidden" value="<%=p.id%>" name="productId">
+                        <button type="submit" class="btn">Delete</button>
+                </form>
+        <%})%> 
+        
+       </ul>
+
+        <% }else{  %> 
+               <h1>No Item found</h1>
+        <% }%>
+</main>
+        
+
+<%- include('../includes/end.ejs') %>
